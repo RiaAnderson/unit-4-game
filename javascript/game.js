@@ -2,12 +2,7 @@
 
 
 
-//create random number for score
-function randomNumber() {
-    var randomNumber = Math.floor((Math.random() * 120) + 19);
-    console.log(randomNumber);
-    $("#randomNumber").text(randomNumber);
-};
+
 
 randomNumber();
 
@@ -41,12 +36,42 @@ var crystalNumber;
 //Crystal buttons
 $("#purpleCrystal").on("click", function () {
     counter = counter + crystalNumber[0];
+    checkScore();
+});
+
+$("#pinkCrystal").on("click", function(){
+    counter = counter + crystalNumber[1];
+    checkScore();
+});
+
+$("#greenCrystal").on("click", function(){
+    counter = counter + crystalNumber[2];
+    checkScore();
+});
+
+$("#greyCrystal").on("click", function (){
+    counter = counter + crystalNumber[3];
+    checkScore();
+});
 
     //create random number for each crystal
     // crystalNumber = Math.floor((Math.random() * 12) + 1);
     // console.log(crystalNumber);
 
-    //add crystal total together
+    //create random number for score
+function randomNumber() {
+    randomNumber = Math.floor((Math.random() * 120) + 19);
+    console.log(randomNumber);
+    $("#randomNumber").text(randomNumber);
+};
+
+function crystalNumber(){
+    crystalNumber = [Math.floor((Math.random() * 12) + 1), Math.floor((Math.random() * 12) +1), Math.floor((Math.random() * 12) + 1), Math.floor((Math.random() * 12) + 1)]
+
+    console.log(crystalNumber);
+
+}
+
     counter += crystalNumber;
     $("#crystalNumber").text(counter);
 
