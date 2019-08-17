@@ -1,23 +1,4 @@
-//start game
-
-
-
-
-
-randomNumber();
-
-// //Crystal button
-// $("#oneCrystal").on("click", function(){
-//     //create random number for each crystal
-// var crystalNumber = Math.floor ((Math.random() * 12) +1);
-// console.log(crystalNumber);
-// $("#crystalNumber").text(crystalNumber);
-// })
-
-//counter for numbers added from crystal clicks
-//counter +=crystalValue;
-//check to see if payer matches random number
-
+//Variables
 //counter for wins
 var winCounter = 0;
 
@@ -33,61 +14,80 @@ var randomNumber;
 //crystal numbers
 var crystalNumber;
 
+
+
 //Crystal buttons
 $("#purpleCrystal").on("click", function () {
     counter = counter + crystalNumber[0];
+    // $("#crystalNumber").text(crystalNumber);
     checkScore();
+    updateHTML()
+    
 });
 
 $("#pinkCrystal").on("click", function(){
     counter = counter + crystalNumber[1];
     checkScore();
+    updateHTML()
+    
 });
 
 $("#greenCrystal").on("click", function(){
     counter = counter + crystalNumber[2];
     checkScore();
+    updateHTML()
+    
 });
 
 $("#greyCrystal").on("click", function (){
     counter = counter + crystalNumber[3];
     checkScore();
+    updateHTML()
+    
 });
 
-    //create random number for each crystal
-    // crystalNumber = Math.floor((Math.random() * 12) + 1);
-    // console.log(crystalNumber);
+//function to start game
+    function initializeGame() {
 
-    //create random number for score
-function randomNumber() {
+    counter = 0;
+
+//create random number for score
     randomNumber = Math.floor((Math.random() * 120) + 19);
     console.log(randomNumber);
     $("#randomNumber").text(randomNumber);
-};
 
-function crystalNumber(){
-    crystalNumber = [Math.floor((Math.random() * 12) + 1), Math.floor((Math.random() * 12) +1), Math.floor((Math.random() * 12) + 1), Math.floor((Math.random() * 12) + 1)]
-
+//create random number for each crystal
+    crystalNumber = [Math.floor((Math.random() * 12) + 1), Math.floor((Math.random() * 12) +1), Math.floor((Math.random() * 12) + 1), Math.floor((Math.random() * 12) + 1)];
     console.log(crystalNumber);
-
-}
-
-    counter += crystalNumber;
     $("#crystalNumber").text(counter);
+};
+    
+    
 
 
-    //check to see if payer equals or goes above random number
-    function checkScore () {
+//check to see if payer equals or goes above random number
+function checkScore () {
     if (counter === randomNumber) {
         $("#winsLosses").text("You won!");
         winCounter += 1;
+        initializeGame()
     } 
-    else if (counter >= randomNumber) {
-        $("#winsLosses").text("You lost!")
-        alert("test");
+    else if (counter > randomNumber) {
+        $("#winsLosses").text("You lost!");
         lossCounter = lossCounter + 1;
+        initializeGame()
     }
 };
 
+//print to html updated counters
+function updateHTML() {
+    document.getElementById("crystalNumber").innerHTML = counter;
+    document.getElementById("winCounter").innerHTML = winCounter;
+    document.getElementById("lossCounter").innerHTML = lossCounter;
+};
 
-//restart the game after each lose or win
+//start game
+initializeGame();
+
+//Print to html
+updateHTML();
