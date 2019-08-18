@@ -1,9 +1,9 @@
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/crystal.jpg");
     background-color: #cccccc;
     /* background-repeat: no-repeat; */
-    /* background-size: 100% 100%;
-    margin-top: 2.2%;
+    background-size: 100% 100%;
+    /*margin-top: 2.2%;
     margin-bottom: 2.2%; */
    }
 
@@ -14,4 +14,11 @@ img {
 
 .card {
     margin: 10PX;
+    background-color: #cde8f3;
+    color: #233350;
 }
+
+h1 {
+    text-align: center
+}
+

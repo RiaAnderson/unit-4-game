@@ -1,93 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <title>Crystal Collector</title>
+    <title>Crystal Collector</title>
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">  
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
     <title></title>
-  </head>
+</head>
+
 <body>
-    <div class="card">
-        <div class="card-body">
-          <h1>Crystal Collector</h1>
+    <!-- Game Name -->
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="d-none card">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Crystal Collector</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="d-none card">
+                <div class="card-body">
+
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <div class="card-body">
-          <p>You will be given a random number at the start of the game.</p>
-          <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-          <p>You win the game by matching your total score to the random number displayed. You will lose the game if your total score goes above the random number.</p>
-          <p>The value of each crystal is hidden from you until you click on it.</p>
-          <p>Each time the game restarts, the game will change the values of each crystal.</p>
+    <!-- Game Instructions -->
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="d-none card">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="col-sm-10">
+                <div class="card-body">
+                    <p>You will be given a random number of crystals to collect at the start of the game. <br>
+                        There are four crystals below. By clicking on a crystal you will add a specific amount of points
+                        to your total score.<br>
+                        You win the game by matching your total score to the random number displayed. You will lose the
+                        game if your total score goes above the random number.<br>
+                        The value of each crystal is hidden from you until you click on it.<br>
+                        Each time the game restarts, the game will change the values of each crystal.</p>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="d-none card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Random number and buttons -->
     <div class="row">
         <div class="col-sm-6">
             <div class="card">
-            <div id="randomNumber" class="card-body">
-                *random number*
-            </div>
+                <div class="card-body">
+                    <p>Number of crystals to collect</p>
+                    <p id="randomNumber"></p>
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="card">
-            <div class="card-body">
-                <p id=winsLosses>?</p>
-                <p id=winCounter>Wins: </p>
-                <p id=lossCounter>losses: </p>                
-            </div>
+                <div class="card-body">
+                    <p id=winsLosses></p>
+                    <p id=winCounter>Wins: </p>
+                    <p id=lossCounter>losses: </p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div id="buttons" class="row">
         <div class="col-sm-3">
             <div class="card">
-            <div class="card-body">
+                <div class="card-body">
                     <button id="purpleCrystal" class="btn"><img src="images/purple.png"></button>
-            </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="card">
-            <div class="card-body">
+                <div class="card-body">
                     <button id="pinkCrystal" class="btn"><img src="images/pink.png"></button>
-            </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="card">
-            <div class="card-body">
+                <div class="card-body">
                     <button id="greenCrystal" class="btn"><img src="images/green.png"></button>
-            </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="card">
-            <div class="card-body">
+                <div class="card-body">
                     <button id="greyCrystal" class="btn"><img src="images/grey.png"></button>
-            </div>
+                </div>
             </div>
         </div>
     </div>
+
+<!-- Crystal counter -->
     <div class="card">
         <div class="card-body">
-            <p>Your total score:</p>
+            <p>Number of crystals collected</p>
             <p id="crystalNumber">0</p>
         </div>
+
     </div>
 
-
-  <script type="text/javascript" src="javascript/game.js"></script>
+    <script type="text/javascript" src="javascript/game.js"></script>
 </body>
+
 </html>
